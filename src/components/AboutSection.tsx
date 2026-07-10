@@ -49,21 +49,36 @@ export function AboutSection() {
           </div>
         </motion.div>
 
-        <div className="flex flex-col justify-center gap-4">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 + i * 0.08, ease: E }}
-              className="rounded-xl border border-line/70 bg-bg p-6"
-            >
-              <p className="font-heading text-4xl font-semibold tracking-tight text-accent [font-variant-numeric:tabular-nums]">
-                {s.value}
-              </p>
-              <p className="mt-1 text-sm text-muted">{s.label}</p>
-            </motion.div>
-          ))}
+        <div className="flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.7, ease: E }}
+            className="overflow-hidden rounded-xl border border-line/70"
+          >
+            <img
+              src="/hero/forest-stump.jpg"
+              alt="A freshly cut tree stump in a cleared yard"
+              className="h-56 w-full object-cover sm:h-64"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-3 gap-3">
+            {stats.map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 24 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.15 + i * 0.08, ease: E }}
+                className="rounded-xl border border-line/70 bg-bg p-4"
+              >
+                <p className="font-heading text-2xl font-semibold tracking-tight text-accent [font-variant-numeric:tabular-nums] sm:text-3xl">
+                  {s.value}
+                </p>
+                <p className="mt-1 text-xs leading-snug text-muted">{s.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

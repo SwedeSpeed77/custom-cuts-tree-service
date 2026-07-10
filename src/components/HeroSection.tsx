@@ -2,23 +2,33 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import { WoodChipperAccent } from "@/components/WoodChipperAccent";
 
 const E = [0.23, 1, 0.32, 1] as [number, number, number, number];
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-dvh flex-col justify-center overflow-hidden pt-20">
+    <section className="relative flex min-h-dvh flex-col justify-end overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/hero/chainsaw-poster.jpg"
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/hero/chainsaw-cut.mp4" type="video/mp4" />
+      </video>
+
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60rem 40rem at 85% 0%, oklch(30% 0.1 55 / 0.35), transparent 60%), radial-gradient(50rem 34rem at 0% 100%, oklch(28% 0.09 155 / 0.55), transparent 70%)",
+            "linear-gradient(to top, oklch(12% 0.021 152 / 0.96) 0%, oklch(12% 0.021 152 / 0.75) 32%, oklch(12% 0.021 152 / 0.25) 62%, oklch(12% 0.021 152 / 0.55) 100%)",
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6">
+      <div className="relative mx-auto w-full max-w-7xl px-4 pb-16 pt-40 sm:px-6 sm:pb-20">
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,7 +38,7 @@ export function HeroSection() {
           Owner-operated · Watertown, South Dakota
         </motion.p>
 
-        <h1 className="max-w-[22ch] font-heading text-[3.4rem] font-bold leading-[0.88] tracking-tight sm:text-[5.5rem] lg:text-[7.5rem] xl:text-[8.5rem]">
+        <h1 className="max-w-[22ch] font-heading text-[3rem] font-bold leading-[0.9] tracking-tight sm:text-[4.6rem] lg:text-[6.2rem] xl:text-[7rem]">
           <motion.span
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +70,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.34, ease: E }}
-            className="max-w-md text-lg leading-relaxed text-muted"
+            className="max-w-md text-lg leading-relaxed text-white/85"
           >
             Jake Brower runs every job himself — tree removal, pruning, and
             stump grinding across Watertown, SD. Big jobs finish fast, and
@@ -85,7 +95,7 @@ export function HeroSection() {
               href="#services"
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.12, ease: E }}
-              className="flex min-h-[56px] items-center justify-center rounded-full border border-line px-8 text-base font-semibold text-ink transition-colors hover:border-muted [touch-action:manipulation]"
+              className="flex min-h-[56px] items-center justify-center rounded-full border border-white/30 px-8 text-base font-semibold text-white transition-colors hover:border-white/60 [touch-action:manipulation]"
             >
               See what we do
             </motion.a>
@@ -96,21 +106,12 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.55, ease: E }}
-          className="mt-8 flex items-center gap-2 text-sm text-muted"
+          className="mt-8 flex items-center gap-2 text-sm text-white/70"
         >
           <Star aria-hidden="true" className="h-4 w-4 fill-gold text-gold" />
           A+ BBB rating · 100% recommend rating on Facebook
         </motion.p>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.3, ease: E }}
-        className="relative mt-6 h-[26vh] min-h-[220px] w-full sm:h-[32vh] sm:min-h-[280px] lg:h-[40vh] lg:min-h-[360px]"
-      >
-        <WoodChipperAccent className="h-full w-full" />
-      </motion.div>
     </section>
   );
 }
