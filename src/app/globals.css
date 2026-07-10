@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: oklch(12% 0.021 152);
+  --color-surface: oklch(16% 0.026 152);
+  --color-raised: oklch(20% 0.03 152);
+  --color-line: oklch(28% 0.032 152);
+  --color-primary: oklch(37% 0.085 155);
+  --color-accent: oklch(68% 0.18 55);
+  --color-gold: oklch(80% 0.13 85);
+  --color-ink: oklch(96% 0.004 150);
+  --color-muted: oklch(71% 0.018 150);
+  --font-heading: var(--font-bitter), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 16px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

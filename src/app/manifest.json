@@ -1,0 +1,12 @@
+{
+  "name": "Custom Cuts Tree Service",
+  "short_name": "Custom Cuts",
+  "description": "Tree removal, pruning, and stump grinding in Watertown, SD.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1710",
+  "theme_color": "#1F5C3A",
+  "icons": [
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
