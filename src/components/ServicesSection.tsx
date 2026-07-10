@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { WoodChipperAccent } from "@/components/WoodChipperAccent";
 
 const E = [0.23, 1, 0.32, 1] as [number, number, number, number];
 
@@ -59,12 +58,7 @@ export function ServicesSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section
-      id="services"
-      ref={ref}
-      className="relative overflow-hidden border-t border-line/60"
-    >
-      <WoodChipperAccent className="pointer-events-none absolute right-4 top-6 hidden h-16 w-36 sm:block sm:right-6 sm:top-8 lg:h-20 lg:w-44" />
+    <section id="services" ref={ref} className="border-t border-line/60">
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
